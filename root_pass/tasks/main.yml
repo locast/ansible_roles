@@ -1,9 +1,3 @@
 # tasks file for root_pass
 - name: "change root passwd"
   shell: echo "root:{{root_passwd}}" | chpasswd
-
-- name: "add the no passwd line in sudoers"
-  lineinfile:
-   path: "/home/ansible/test"
-   state: "present"
-   line: "{{ansible_user}} ALL=(ALL) NOPASSWD: ALL" 

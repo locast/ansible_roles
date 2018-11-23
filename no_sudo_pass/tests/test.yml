@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - root_pass
+    - no_sudo_pass

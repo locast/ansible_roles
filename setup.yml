@@ -1,0 +1,11 @@
+- name: "using role user creation root new pass && no sudo passwd"
+  hosts: vps
+  roles:
+   - role: "ansible_user"
+     tags: "useradd"
+   - role: "ansible_maj"
+     tags: "syst_update"
+   - role: "no_sudo_pass"
+     tags: "no_pass_ask"
+   - role: "root_pass"
+     tags: "chg_root_pass"
