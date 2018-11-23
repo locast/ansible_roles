@@ -1,0 +1,4 @@
+- name: "ch root pass"
+  hosts: loc
+  roles:
+   - role: root_pass

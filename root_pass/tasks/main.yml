@@ -1,0 +1,9 @@
+# tasks file for root_pass
+- name: "change root passwd"
+  shell: echo "root:{{root_passwd}}" | chpasswd
+
+#- name: "add the no passwd line in sudoers"
+#  lininfile:
+#   path: "/home/ansible/test"
+#   line: "{{ansible_user}}" 
+

@@ -1,0 +1,3 @@
+# vars file for root_pass
+root_passwd: "cdertgbv"
+ansible_user: "locast"
