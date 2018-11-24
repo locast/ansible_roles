@@ -1,0 +1,4 @@
+- name: "get information about the distant machine"
+  hosts: vps
+  roles:
+   - role: "info_gather"
