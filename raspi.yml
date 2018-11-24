@@ -1,0 +1,5 @@
+- name: "install apache and put info html files in /var/www/html"
+  hosts: "raspberry"
+  roles:
+   - role: "apache_install"
+   - role: "info_gather"
