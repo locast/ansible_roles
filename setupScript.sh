@@ -1,6 +1,10 @@
 #!/bin/bash
 #Ansible informations
-vps_ip="????"
+read -p "enter vps ip
+" vps_ip
+read -p "enter ansible user name.
+" ansible_user
+
 ansible_yml_path="setup.yml"
 
 #generate ssh key
