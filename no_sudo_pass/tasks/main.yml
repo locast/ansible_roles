@@ -1,6 +1,0 @@
-# tasks file for no_sudo_pass
-- name: "never ask passwd for sudo"
-  lineinfile:
-   path: "/etc/sudoers"
-   state: "present"
-   line: "{{ansible_user}} ALL=(ALL:ALL) NOPASSWD: ALL"

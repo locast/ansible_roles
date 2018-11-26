@@ -1,6 +1,0 @@
-# tasks file for samba_cfg_raspberry
-- name: "configure samba"
-  template:
-   src: "smb.conf.j2"
-   dest: "/etc/samba/smb.conf"
-  notify: "samba restart"

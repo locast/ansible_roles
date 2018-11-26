@@ -1,4 +1,0 @@
-# vars file for samba_install_raspberry
-NAS_PATH: "/home/shares/public/data"
-SMB_PASS: "cdertgbv"
-SMB_USER: "pi"

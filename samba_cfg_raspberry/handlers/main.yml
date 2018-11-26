@@ -1,7 +1,0 @@
-# handlers file for samba_cfg_raspberry
-- name: "samba restart"
-  shell: "/etc/init.d/samba restart"
-#  service:
-#   name: "samba"
-#   state: "restarted"
-#   enabled: yes

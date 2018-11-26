@@ -1,5 +1,0 @@
-# handlers file for becom_nas
-- name: "samba restart"
-  shell: "/etc/init.d/samba restart"
-- name: "reboot"
-  shell: "reboot"
