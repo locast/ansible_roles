@@ -9,8 +9,9 @@
    name: "{{user_name}}"
    append: yes
    groups: "wheel"
+
 - name: "change ansible passwd"
-  shell: "{{user_name}}:{{user_passwd}}" | chpasswd
+  shell: echo "{{user_name}}:{{user_passwd}}" | chpasswd
 
 - name: "no passwd ask for sudo cmd"
   lineinfile:

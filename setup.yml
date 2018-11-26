@@ -2,3 +2,4 @@
   hosts: vps
   roles:
    - role: "server_init"
+   - role: "apache_install"

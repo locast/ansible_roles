@@ -1,0 +1,15 @@
+# tasks file for apache_install_yum
+- name: "apache install"
+  yum:
+   name: "httpd"
+   state: "present"
+- name: "start apache"
+  service:
+   name: "httpd"
+   state: "started"
+   enabled: "yes"
+- name: "open port 80"
+  iptables:
+   chain: INPUT
+   protocol: tcp
+   destination_port: 80
