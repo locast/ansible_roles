@@ -1,0 +1,11 @@
+# tasks file for disck_mount_nas
+- name: "unmount disk"
+  shell: "umount {{NAS_DISK_MP}}"
+  #shell: "umount /home/shares/public/data"
+- name: "remount disk"
+  shell: "mount -t auto {{NAS_DISK_MN}} {{NAS_TARGET}}"
+- name: "fstab file edit for automount"
+  template:
+   src: "fstab.j2"
+   dest: "/etc/fstab"
+  notify: "samba restart"

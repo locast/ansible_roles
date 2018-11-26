@@ -16,7 +16,7 @@
    src: "info.html.j2"
    #dest: "/home/ansible/test.html"
    dest: "/var/www/html/index.html"
-   owner: "pi"
+   owner: "www-data"
    group: "www-data"
   notify: ["apache restart"]
 

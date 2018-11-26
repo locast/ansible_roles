@@ -1,0 +1,2 @@
+# vars file for samba_cfg_raspberry
+NAS_PATH: "/homr/shares/public"

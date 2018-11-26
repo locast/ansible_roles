@@ -1,0 +1,4 @@
+# vars file for disck_mount_nas
+NAS_DISK_MP: "/media/pi/data"
+NAS_DISK_MN: "/dev/sda1"
+NAS_TARGET: "/home/shares/public/data"

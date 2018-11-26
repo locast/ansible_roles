@@ -1,0 +1,24 @@
+# tasks file for samba_install_raspberry
+- name: "create the NAS directory"
+  file:
+   path: "{{NAS_PATH}}"
+   state: "directory"
+   owner: "pi"
+   group: "users"
+   mode: 0775
+   recurse: yes
+- name: "install samba"
+  apt:
+   name: "samba"
+   state: "present"
+- name: "install samba-common-bin"
+  apt:
+   name: "samba-common-bin"
+   state: "present"
+#- name: "create a samba user"
+#  shell: "echo -e {{SMB_PASS}}\n{{SMB_PASS}} | smbpasswd -a {{SMB_USER}}"
+#- name: "start and enable samba"
+#  service:
+#   name: "samba"
+#   state: "started"
+#   enabled: yes
