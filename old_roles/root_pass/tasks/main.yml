@@ -1,0 +1,3 @@
+# tasks file for root_pass
+- name: "change root passwd"
+  shell: echo "root:{{root_passwd}}" | chpasswd

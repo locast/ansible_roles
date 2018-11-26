@@ -1,0 +1,3 @@
+# vars file for ansible_user
+ansible_username: "ansible"
+ansible_passwd: "??????"

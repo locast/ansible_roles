@@ -1,0 +1,56 @@
+# tasks file for becom_nas
+- name: "unmount disk"
+  shell: "umount {{NAS_MP}}"
+- name: "update raspberry"
+  apt:
+   name: '*'
+   state: "latest"
+- name: "install ntfs-3g"
+  apt:
+   name: "ntfs-3g"
+   state: "present"
+- name: "create sharing group"
+  group:
+   name: "sharing"
+   state: "present"
+- name: "add user:{{NAS_USER}} to sharing group"
+  user:
+   name: "{{NAS_USER}}"
+   append: yes
+   groups: "sharing"
+- name: "create the NAS dir"
+  file:
+   path: "{{NAS_TARGET}}"
+   state: "directory"
+   owner: "pi"
+   group: "sharing"
+   mode: 0775
+   recurse: yes
+- name: "install samba"
+  apt:
+   name: "samba"
+   state: "present"
+- name: "install samba-common-bin"
+  apt:
+   name: "samba-common-bin"
+   state: "present"
+- name: "samba configuration"
+  template:
+   src: "smb.conf.j2"
+   dest: "/etc/samba/smb.conf"
+#- name: "remount disk"
+#  shell: "mount -t ntfs-3g -o uid=pi,gid=pi {{NAS_MP}} {{NAS_TARGET}}"
+#  mount:
+#   src: "{{NAS_MN}}"
+#   state: "mounted"
+#   opts: "rw"
+#   path: "{{NAS_TARGET}}"
+#   fstype: "ntfs"
+- name: "fstab file edit for automount"
+  template:
+   src: "fstab.j2"
+   dest: "/etc/fstab"  
+#  notify: "reboot"
+#  notify: "samba restart"  
+- name: "reboot"
+  shell: "reboot"

@@ -1,0 +1,2 @@
+# vars file for no_sudo_pass
+ansible_user: "ansible"

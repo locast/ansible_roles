@@ -1,0 +1,22 @@
+# tasks file for info_gather
+- name: "get general information about a distant machine"
+  shell: "lscpu"
+  register: base_info
+- name: "get memory informations"
+  shell: "vmstat"
+  register: mem_info
+- name: "network informations"
+  shell: "netstat -a | more"
+  register: net_info
+- name: "free memory"
+  shell: "free -m"
+  register: free_mem
+- name: "info write"
+  template:
+   src: "info.html.j2"
+   #dest: "/home/ansible/test.html"
+   dest: "/var/www/html/index.html"
+   owner: "www-data"
+   group: "www-data"
+  notify: ["apache restart"]
+

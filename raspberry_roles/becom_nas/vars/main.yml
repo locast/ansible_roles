@@ -1,0 +1,12 @@
+# vars file for becom_nas
+#disk source
+NAS_MN: "/dev/sda1"
+#current disk mount point
+NAS_MP: "/home/pi/NAS/data"
+#NAS_MP: "/media/pi/data"
+#disk target mount point
+NAS_TARGET: "/home/pi/NAS/data"
+#online repo path
+NAS_REPO: "/home/pi/NAS"
+#user to add to sharing group"
+NAS_USER: "pi"
