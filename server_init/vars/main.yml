@@ -1,0 +1,7 @@
+# vars file for server_init
+#new user name
+user_name: "testuser"
+#new user passwd
+user_passwd: "testpass"
+#new root pass
+root_passwd: "rootpasstest"

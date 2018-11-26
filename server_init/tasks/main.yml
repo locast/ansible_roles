@@ -1,0 +1,37 @@
+# tasks file for server_init
+- name: "update system"
+  yum:
+   name: '*'
+   state: "latest"
+
+- name: "create user"
+  user:
+   name: "{{user_name}}"
+   append: yes
+   groups: "wheel"
+- name: "change ansible passwd"
+  shell: "{{user_name}}:{{user_passwd}}" | chpasswd
+
+- name: "no passwd ask for sudo cmd"
+  lineinfile:
+   path: "/etc/sudoers"
+   state: "present"
+   line: "{{user_name}} ALL=(ALL:ALL) NOPASSWD: ALL"
+
+- name: "change root pass"
+  shell: echo "root:{{root_passwd}}" | chpasswd
+
+- name: 'install apache"
+  yum:
+   name: "httpd"
+   state: "present"
+- name: "active apache"
+  service:
+   name: "httpd"
+   state: "started"
+   enabled: yes
+- name: "open port 80:
+  iptables:
+   chain: INPUT
+   protocol: tcp
+   destination_port: 80
