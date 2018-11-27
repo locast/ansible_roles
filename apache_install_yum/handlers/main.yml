@@ -1,2 +1,6 @@
----
 # handlers file for apache_install_yum
+- name: "apache restart"
+  service:
+   name: "httpd"
+   state: "restarted"
+   enabled: yes

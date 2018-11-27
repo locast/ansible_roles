@@ -1,0 +1,4 @@
+- name: "httpd install"
+  hosts: vps
+  roles:
+   - role: "apache_install_yum"

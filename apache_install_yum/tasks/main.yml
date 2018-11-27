@@ -13,3 +13,9 @@
    chain: INPUT
    protocol: tcp
    destination_port: 80
+- name: "install php"
+  yum:
+   name: "php,php-mysql,php-xml,php-mbstring,php-mcrypt,php-gd,php-intl"
+   state: "present"
+#  when: php_install|default(False)|bool
+  notify: ["apache restart"]

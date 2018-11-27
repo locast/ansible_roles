@@ -14,8 +14,8 @@
 - name: "info write"
   template:
    src: "info.html.j2"
-   dest: "/home/ansible/test.html"
-   #dest: "/var/www/html/info.html"
+   #dest: "/home/ansible/test.html"
+   dest: "/var/www/html/info.html"
    #owner: "apache"
    #group: "apache"
 

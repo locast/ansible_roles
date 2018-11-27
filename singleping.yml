@@ -1,0 +1,4 @@
+- name: "ping 2diff hosts"
+  hosts: vps
+  tasks:
+   - ping:

@@ -1,0 +1,4 @@
+- name: 'info gether'
+  hosts: vps
+  roles:
+   - role: "info_gather"
