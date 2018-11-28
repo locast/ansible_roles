@@ -8,18 +8,24 @@
    name: "httpd"
    state: "started"
    enabled: "yes"
-- name: "open port 80 input"
-  iptables:
-   chain: INPUT
-   protocol: tcp
-   destination_port: 80
-- name: "restart firewalld"
-  service:
-   name: "firewalld"
-   state: "restarted"
+#- name: "open port 80 input"
+#  iptables:
+#   chain: INPUT
+#   protocol: tcp
+#   destination_port: 80
+#- name: "restart firewalld"
+#  service:
+#   name: "firewalld"
+#   state: "restarted"
 - name: "install php"
   yum:
    name: "php,php-mysql,php-xml,php-mbstring,php-mcrypt,php-gd,php-intl"
    state: "present"
 #  when: php_install|default(False)|bool
   notify: ["apache restart"]
+- name: "open firewall port 80"
+  firewalld:
+   port: "80/tcp"
+   permanent: yes
+   state: enabled
+  notify: "restart firewall"
