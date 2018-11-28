@@ -2,4 +2,5 @@
   hosts: vps
   roles:
    - role: "server_init"
-   - role: "apache_install"
+   - role: "apache_install_yum"
+   - role: "mariadb_install"
