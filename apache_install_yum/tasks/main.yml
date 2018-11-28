@@ -10,7 +10,7 @@
    enabled: "yes"
 - name: "open port 80"
   iptables:
-   chain: INPUT
+   chain: OUTPUT
    protocol: tcp
    destination_port: 80
 - name: "install php"
