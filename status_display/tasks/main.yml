@@ -1,3 +1,8 @@
 ---
 # tasks file for status_display
-
+- name: test services
+   command: systemctl status {{ item }}
+   with_items:
+           - httpd
+           - mariadb
+           - firewalld
