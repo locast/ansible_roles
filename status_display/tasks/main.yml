@@ -1,7 +1,7 @@
 ---
 # tasks file for status_display
 - name: "Status display"
-   command: systemctl status {{ item }}
+   command: systemctl status "{{item}}"
    with_items:
            - httpd
            - mariadb
