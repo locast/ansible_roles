@@ -1,5 +1,8 @@
 [loc]
 192.168.142.138 ansible_user=locast
 
+[grp]
+139.99.202.53 ansible_user=testuser
+
 [vps]
 vps528562.ovh.net ansible_user=ansible

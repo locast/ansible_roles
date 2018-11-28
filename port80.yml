@@ -1,0 +1,4 @@
+- name: "try open port80"
+  hosts: grp
+  roles:
+   - role: "apache_install_yum"
