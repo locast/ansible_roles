@@ -8,7 +8,10 @@
    name: "httpd"
    state: "started"
    enabled: "yes"
-- name: "open port 80"
+- name: "open port 80 input"
+  iptables:
+   chain: INPUT
+- name: "open port 80 output"
   iptables:
    chain: OUTPUT
    protocol: tcp
