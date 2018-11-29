@@ -4,6 +4,8 @@
    name: "httpd"
    state: "restarted"
    enabled: yes
+  register: apache_restart
+- debug: msg=apache_restart
 - name: "restart firewall"
   service:
    name: "firewalld"

@@ -22,7 +22,7 @@
    name: "php,php-mysql,php-xml,php-mbstring,php-mcrypt,php-gd,php-intl"
    state: "present"
 #  when: php_install|default(False)|bool
-  notify: ["apache restart"]
+  notify: "apache restart"
 - name: "open firewall port 80"
   firewalld:
    port: "80/tcp"
