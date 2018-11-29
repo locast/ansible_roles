@@ -1,0 +1,13 @@
+- name: "Apache status"
+  shell: "service httpd status"
+  register: var_httpd
+- name: "Mariadb status"
+  shell: "service mariadb status"
+  register: var_mariadb
+- name: "Firewall status"  
+  shell: "systemctl status firewalld"
+  register: var_firewalld
+- name: "Generation fichier HTML"
+  template:
+   src: "template.html.j2"
+   dest: "/var/www/html"
