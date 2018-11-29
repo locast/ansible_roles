@@ -30,7 +30,7 @@ $wgScriptPath = "";
 $wgScriptExtension = ".php";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://vps528562.ovh.net";
+$wgServer = "http://{{db_host}}";
 
 ## The relative URL path to the skins directory
 $wgStylePath = "$wgScriptPath/skins";
@@ -44,8 +44,8 @@ $wgLogo = "$wgScriptPath/resources/assets/wiki.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = "apache@vps528562.ovh.net";
-$wgPasswordSender = "apache@vps528562.ovh.net";
+$wgEmergencyContact = "apache@{{db_host}}";
+$wgPasswordSender = "apache@{{db_host}}";
 
 $wgEnotifUserTalk = false; # UPO
 $wgEnotifWatchlist = false; # UPO
