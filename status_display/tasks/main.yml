@@ -10,4 +10,4 @@
 - name: "Generation fichier HTML"
   template:
    src: "template.html.j2"
-   dest: "/var/www/html"
+   dest: "/var/www/html/status_display.html"

@@ -15,10 +15,10 @@
    remote_src: yes
    # remove mediawiki frompath
    extra_opts: --transform=s/^mediawiki-[0-9\.]*\///
-- name: "mediawiki config"
-  template:
-   src: "LocalSettings.php.j2"
-   dest: "/var/www/html/LocalSettings.php"
+#- name: "mediawiki config"
+#  template:
+#   src: "LocalSettings.php.j2"
+#   dest: "/var/www/html/LocalSettings.php"
 #  become: yes
 #  become_user: "apache"
 #  command:
