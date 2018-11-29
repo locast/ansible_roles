@@ -4,4 +4,5 @@
    - role: "server_init"
    - role: "apache_install_yum"
    - role: "mariadb_install"
-   - role: "status_display"
+   - role: "media_wiki_install"
+#   - role: "status_display"

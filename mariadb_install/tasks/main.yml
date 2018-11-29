@@ -1,10 +1,20 @@
 # tasks file for mariadb_server
 - name: "mariadb install"
   yum:
-   name: "mariadb-server"
+   name: "mariadb-server,MySQL-python"
    state: "installed"
 - name: "start mariadb service"
   service:
    name: "mariadb"
    state: "started"
    enabled: yes
+- name: "mysql database"
+  mysql_db:
+   name: "{{db_name}}"
+   state: "present"
+- name: "mediawiki user+ wright"
+  mysql_user:
+   name: "{{db_user}}"
+   password: "{{db_passwd}}"
+   priv: "{{db_name}}.*:ALL"
+   state: "present"

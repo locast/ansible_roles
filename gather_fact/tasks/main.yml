@@ -1,0 +1,7 @@
+# tasks file for gather_fact
+- name "try ansible setup"
+  setup:
+   gather_subset:
+    - '!all'
+    - '!any'
+    - facter

@@ -1,0 +1,9 @@
+# vars file for media_wiki_install
+mediawiki_user: "admin"
+mediawiki_admin_pass: "admin"
+mediawiki_name: "mediawiki"
+mediawiki_title: "Le wiki"
+mediawiki_host: "{{groups.vps.0}}"
+mediawiki_url: "https://releases.wikimedia.org/mediawiki/1.24/mediawiki-1.24.1.tar.gz"
+mediawiki_password: "mediawiki"
+mediawiki_directory: "/var/www/html"

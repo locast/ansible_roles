@@ -1,0 +1,32 @@
+# tasks file for media_wiki_install
+- name: "media wiki dir"
+  file:
+   path: "{{mediawiki_directory}}"
+   owner: "apache"
+   group: "apache"
+   state: directory
+- name: "unzip mediawiki"
+  unarchive:
+   src: "{{mediawiki_url}}"
+   dest: "{{mediawiki_directory}}"
+   owner: "apache"
+   group: "apache"
+   mode: 0755
+   remote_src: yes
+   # remove mediawiki frompath
+   extra_opts: --transform=s/^mediawiki-[0-9\.]*\///
+- name: "mediawiki config"
+  template:
+   src: "LocalSettings.php.j2"
+   dest: "/var/www/html/LocalSettings.php"
+#  become: yes
+#  become_user: "apache"
+#  command:
+#   php install.php --scriptpath {{mediawiki_directory}}/maintenance
+#     --dbname mediawiki --lang fr
+#     --dbuser {{mediawiki_user}}
+#     --dbpass {{mediawiki_password}}
+#     --pass {{mediawiki_password}}
+#     --dbserver {{mediawiki_host}}
+#     {{mediawiki_title}} {{mediawiki_admin_pass}} 
+#   php install.php --scriptpath /{{mediawiki_directory}}/maintenance

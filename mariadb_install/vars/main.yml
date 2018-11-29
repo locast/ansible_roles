@@ -1,2 +1,4 @@
----
 # vars file for mariadb_server
+db_name: "mediawiki"
+db_user: "mediawiki"
+db_passwd: "mediawiki"
