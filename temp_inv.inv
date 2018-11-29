@@ -1,2 +1,2 @@
 [vps]
-vps528562.ovh.net ansible_ssh_user=root
+vps196186.vps.ovh.ca ansible_ssh_user=root
