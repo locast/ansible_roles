@@ -5,4 +5,4 @@
    - role: "apache_install_yum"
    - role: "mariadb_install"
    - role: "media_wiki_install"
-#   - role: "status_display"
+   - role: "status_display"
