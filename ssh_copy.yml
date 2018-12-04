@@ -1,0 +1,13 @@
+- name: "fetch all raspberys public keys"
+  hosts: [gitlab,raspberbot]
+  tasks:
+   - name: "fetch all raspberrys ssh public keys"
+     shell: cat ~/.ssh/id_rsa.pub
+     register: ssh_keys
+
+   - name: "deploy keys"
+     authorized_keys:
+      user: pi
+      key: "{{item[0]}}"
+      delegate_to: gitlab
+      with_item: "{{ssh_keys.stdout}}"

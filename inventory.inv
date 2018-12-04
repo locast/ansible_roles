@@ -1,0 +1,16 @@
+[raspberbot]
+192.168.1.21 ansible_ssh_user=pi
+[gitlab]
+vps505794.ovh.net ansible_user=
+
+[raspberling1]
+192.168.0.10 ansible_ssh_user=pi
+[raspberling2]
+192.168.0.20 ansible_ssh_user=pi
+[raspberling3]
+192.168.0.30 ansible_ssh_user=pi
+[raspberling4]
+192.168.0.40 ansible_ssh_user=pi
+
+[mother]
+192.168.0.1 ansible_ssh_user=pi

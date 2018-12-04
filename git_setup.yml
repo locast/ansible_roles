@@ -1,0 +1,4 @@
+- name: "git setup"
+  hosts: raspberbot
+  roles:
+   - role: "ssh_git_setup"

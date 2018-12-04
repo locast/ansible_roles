@@ -1,0 +1,3 @@
+# tasks file for ssh_git_setup
+- name: "generate ssh key"
+  command : ssh-keygen -q -t rsa -f /home/pi/.ssh -C "" -N ""
