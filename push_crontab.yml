@@ -1,0 +1,4 @@
+- name: "edit crontab fro raspberling4"
+  hosts: raspberbot
+  roles:
+   - role: "push_crontab"

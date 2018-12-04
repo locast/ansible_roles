@@ -1,0 +1,4 @@
+- name: "init git"
+  hosts: raspberbot
+  roles:
+   - role: "git_init"

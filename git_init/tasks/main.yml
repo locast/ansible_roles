@@ -1,0 +1,11 @@
+# tasks file for git_init
+- name: "clone info repository"
+  command: "git clone http://{{git_user}}:{{git_pass}}@vps505794.ovh.net:8080/robot/infos.git /home/pi/Desktop/infos"
+  #git:
+  # repo: "http://{{git_user}}:{{git_pass}}@vps505794.ovh.net:8080/robot/infos.git"
+  # dest: /home/pi/Desktop/infos
+- name: "clone code repository"
+  command: "git clone http://{{git_user}}:{{git_pass}}@vps505794.ovh.net:8080/robot/code.git /home/pi/Desktop/code"
+  #git:
+  # repo: "http://{{git_user}}:{{git_pass}}@vps505794.ovh.net:8080/robot/code.git"
+  # dest: /home/pi/Desktop/code

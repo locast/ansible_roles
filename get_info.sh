@@ -1,6 +1,7 @@
 #!/bin/bash
 #get services status
-info_file=/home/pi/infos/$(date).log
+info_file=/home/pi/Desktop/infos/$(date).log
+
 echo -e "\n\n" >> "$info_file"
 echo "services:" >> "$info_file"
 service --status-all >> "$info_file"
