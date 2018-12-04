@@ -21,7 +21,8 @@
 # 
 # m h  dom mon dow   command
 
- */20 *  * * *   bash /home/pi/Desktop/get_info.sh && git -C /home/pi/Desktop/infos/ add * && git -C /home/pi/Desktop/infos/ commit -m "$(date) commit" && git -C /home/pi/Desktop/infos/ push
+ */20 *  * * *   bash /home/pi/Desktop/get_info.sh && bash /home/pi/Desktop/git_push.sh 
+#&& git -C /home/pi/Desktop/infos/ add * && git -C /home/pi/Desktop/infos/ commit -m "$(date) commit" && git -C /home/pi/Desktop/infos/ push
  */20 *  * * *   git -C /home/pi/Desktop/code/ pull
 # git push du truck en haut
 # */20 *  * * *   git pull auto
