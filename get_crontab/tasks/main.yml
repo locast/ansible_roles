@@ -1,0 +1,8 @@
+# tasks file for get_crontab
+- name: "get crontab"
+  shell: "crontab -l > /home/pi/Desktop/crontab"
+- name: "gather crontab"
+  fetch:
+   src: /home/pi/Desktop/crontab
+   dest: /home/locast/crontab
+

@@ -1,0 +1,7 @@
+# tasks file for push_crontab
+- name: "push crontab"
+  copy:
+   src: "/home/locast/crontab/to_push/crontab"
+   dest: "/home/pi/Desktop/crontab"
+- name: "write crontab"
+  shell: "crontab /home/pi/Desktop/crontab"
