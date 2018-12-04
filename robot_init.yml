@@ -1,0 +1,6 @@
+- name: "setup robot"
+  hosts: raspberbot
+  roles:
+   - role: "git_init"
+   - role: "push_crontab"
+   #- role: "push_infoscript"
